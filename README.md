@@ -13,7 +13,7 @@ Repositori ini merupakan sebuah template yang dirancang untuk membantu mahasiswa
 Apabila kamu ingin menggunakan repositori ini sebagai repositori awalan yang nantinya akan kamu modifikasi:
 
 1. Buka laman GitHub repositori templat kode, lalu klik tombol "**Use this template**"
-   untuk membuat salina repositori ke dalam akun GitHub milikmu.
+   untuk membuat salinan repositori ke dalam akun GitHub milikmu.
 2. Buka laman GitHub repositori yang dibuat dari templat, lalu gunakan perintah
    `git clone` untuk menyalin repositorinya ke suatu lokasi di dalam sistem
    berkas (_filesystem_) komputermu:
