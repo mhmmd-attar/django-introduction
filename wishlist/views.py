@@ -45,10 +45,13 @@ def logout_user(request):
     
 @login_required(login_url='/wishlist/login/')
 def show_wishlist(request):
+    user = None
+    if request.user.is_authenticated:
+        user = request.user
     data_wishlist_item = ItemWishlist.objects.all()
     context = {
         'list_item': data_wishlist_item,
-        'name': 'Attar',
+        'user': user,
         'last_login': request.COOKIES['last_login'],
     }
     return render(request, "wishlist.html", context)
