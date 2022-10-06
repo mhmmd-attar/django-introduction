@@ -71,3 +71,16 @@ def show_xml_by_id(request, id):
 def show_json_by_id(request, id):
     data = ItemWishlist.objects.filter(pk=id)
     return HttpResponse(serializers.serialize("json", data), content_type="application/json")
+
+@login_required(login_url='/wishlist/login/')
+def show_wishlist_ajax(request):
+    user = None
+    if request.user.is_authenticated:
+        user = request.user
+    data_wishlist_item = ItemWishlist.objects.all()
+    context = {
+        'list_item': data_wishlist_item,
+        'user': user,
+        'last_login': request.COOKIES['last_login'],
+    }
+    return render(request, "wishlist_ajax.html", context)    
